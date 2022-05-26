@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using EcomShopping.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,8 @@ namespace Ecom_Shoppping_Website.DataAccess.Data
             : base(options)
         {
         }
+
+        public DbSet<Category> Categories { get; set; }
+
     }
 }
