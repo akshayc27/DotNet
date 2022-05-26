@@ -13,12 +13,17 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.25" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.25" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.25" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EcomShopping.DataAccess\EcomShopping.DataAccess.csproj" />
     <ProjectReference Include="..\EcomShopping.Models\EcomShopping.Models.csproj" />
     <ProjectReference Include="..\EcomShopping.Utility\EcomShopping.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Controllers\" />
   </ItemGroup>
 
 </Project>
