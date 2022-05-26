@@ -1,4 +1,5 @@
-﻿using Ecom_Shoppping_Website.Models;
+﻿
+using EcomShopping.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ecom_Shoppping_Website.Controllers
+namespace EcomShopping.Controllers
 {
     public class HomeController : Controller
     {

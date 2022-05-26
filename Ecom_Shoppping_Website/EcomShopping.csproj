@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.25" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EcomShopping.DataAccess\EcomShopping.DataAccess.csproj" />
+    <ProjectReference Include="..\EcomShopping.Models\EcomShopping.Models.csproj" />
+    <ProjectReference Include="..\EcomShopping.Utility\EcomShopping.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-using Ecom_Shoppping_Website.Data;
+using Ecom_Shoppping_Website.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
