@@ -1,4 +1,6 @@
-using Ecom_Shoppping_Website.DataAccess.Data;
+using Ecom_Shopping.DataAccess.Data;
+using EcomShopping.DataAccess.Repository;
+using EcomShopping.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,7 +34,8 @@ namespace Ecom_Shoppping_Website
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
         }
 

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ecom_Shoppping_Website.DataAccess.Data
+namespace Ecom_Shopping.DataAccess.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
