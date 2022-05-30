@@ -13,7 +13,7 @@
             title = "Edit Category";
         }
         <div class="col-12 border-bottom">
-            <h2 class="text-primary">TITLE</h2>
+            <h2 class="text-primary">@title</h2>
         </div>
         <div class="col-8 pt-4">
             <div class="form-group row">
@@ -33,7 +33,7 @@
             }
             else
             {
-                <partial name="_CreateAndBackToLIstButton" model="Model.Id"/>
+                <partial name="_CreateAndBackToLIstButton"/>
             }
                 </div>
             </div>
@@ -42,3 +42,8 @@
 </form>
 
 
+@section Scripts{ 
+
+<partial name="_ValidationScriptsPartial"/>
+
+}

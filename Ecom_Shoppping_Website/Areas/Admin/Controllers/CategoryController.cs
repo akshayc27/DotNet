@@ -47,11 +47,39 @@ namespace EcomShopping.Areas.Admin.Controllers
             return View(category);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //writes unique value to httponly cookies then the same value is return to the form.
+        //when page is submitted , and if cookie value doesnot match then error is raised.
+        //prevent cross-side  request forgery
+        public IActionResult Upsert(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                if(category.Id == 0)
+                {
+                    _unitOfWork.Category.Add(category);
+                    
+                }
+                else
+                {
+                    _unitOfWork.Category.Update(category);
+                    
+                }
+
+                _unitOfWork.Save();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(category);
+        }
+
+
 
         #region API CALLS
 
         [HttpGet]
-
         public IActionResult GetAll()
         {
 

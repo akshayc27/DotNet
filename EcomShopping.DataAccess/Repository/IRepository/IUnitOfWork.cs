@@ -10,6 +10,7 @@ namespace EcomShopping.DataAccess.Repository.IRepository
 
         ISP_Call SP_Call { get; }
 
+        void Save();
 
     }
 }
