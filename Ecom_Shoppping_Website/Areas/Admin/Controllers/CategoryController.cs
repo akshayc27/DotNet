@@ -23,6 +23,7 @@ namespace EcomShopping.Areas.Admin.Controllers
             return View();
         }
 
+        
         public IActionResult Upsert(int? id)
         {
             Category category = new Category();
@@ -45,6 +46,25 @@ namespace EcomShopping.Areas.Admin.Controllers
             }
 
             return View(category);
+        }
+
+
+        public IActionResult Delete(int? id)
+        {
+            var objFromDb = _unitOfWork.Category.Get(id.GetValueOrDefault());
+            if (objFromDb == null)
+            {
+                return Json(new { sucess = false, Message = "Error While deleting" });
+            }
+
+            _unitOfWork.Category.Remove(objFromDb);
+            _unitOfWork.Save();
+
+            //Category category = new Category();
+            //category = _unitOfWork.Category.Get(id.GetValueOrDefault());
+            //return Json(new { sucess = true, Message = "Delete Sucessful" });
+            return RedirectToAction(nameof(Index));
+
         }
 
         [HttpPost]
@@ -87,6 +107,9 @@ namespace EcomShopping.Areas.Admin.Controllers
 
             return Json(new { data = allObj });
         }
+
+        
+   
 
         #endregion
 
