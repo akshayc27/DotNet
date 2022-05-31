@@ -13,8 +13,16 @@ function loadDataTable() {
             url: '/Admin/Category/GetAll'
         },
         columns: [
-            { 'data': 'id' },
-            { 'data': 'name' }
+            { 'data': 'name' },
+            {
+             
+                "data": "id",
+              
+                "render": function (data) {
+                    return `<a href="Admin/Category/Upsert/${data}" class="editUser">Edit</a>`;
+                }
+            }
+           
         ]
     })
     
