@@ -10,6 +10,8 @@ namespace EcomShopping.DataAccess.Repository.IRepository
 
         ICoverTypeRepository CoverType { get; }
 
+        IProductRepository Product { get; }
+
         ISP_Call SP_Call { get; }
 
         void Save();
