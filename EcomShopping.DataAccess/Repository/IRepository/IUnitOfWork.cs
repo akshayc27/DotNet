@@ -8,6 +8,8 @@ namespace EcomShopping.DataAccess.Repository.IRepository
     {
         ICategoryRepository Category { get; }
 
+        ICompanyRepository Company { get; }
+
         ICoverTypeRepository CoverType { get; }
 
         IProductRepository Product { get; }
