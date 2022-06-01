@@ -1,4 +1,6 @@
 ﻿
+using EcomShopping.DataAccess.Repository.IRepository;
+using EcomShopping.Models;
 using EcomShopping.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,19 +16,23 @@ namespace EcomShopping.Areas.Customer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
+            _unitOfWork=unitOfWork;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeproperties: "Category,CoverType");
+            return View(productList);
         }
 
         public IActionResult Privacy()
         {
+            
             return View();
         }
 

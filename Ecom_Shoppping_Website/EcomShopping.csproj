@@ -22,4 +22,8 @@
     <ProjectReference Include="..\EcomShopping.Utility\EcomShopping.Utility.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\products\" />
+  </ItemGroup>
+
 </Project>

@@ -33,7 +33,7 @@ namespace EcomShopping.DataAccess.Repository
                 objFromDb.Price50 = product.Price50;
                 objFromDb.ListPrice = product.ListPrice;
                 objFromDb.Price100 = product.Price100;
-                objFromDb.Title = product.ImageUrl;
+                objFromDb.Title = product.Title;
                 objFromDb.Description = product.Description;
                 objFromDb.CategoryId = product.CategoryId;
                 objFromDb.Author = product.Author;
