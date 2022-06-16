@@ -20,6 +20,7 @@ namespace EcomShopping.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            var strng = TempData["Msg"];
             return View();
         }
 
@@ -60,6 +61,7 @@ namespace EcomShopping.Areas.Admin.Controllers
             _unitOfWork.Category.Remove(objFromDb);
             _unitOfWork.Save();
 
+            TempData["Msg"] = "Selected Record Deleted.";
             //Category category = new Category();
             //category = _unitOfWork.Category.Get(id.GetValueOrDefault());
             //return Json(new { sucess = true, Message = "Delete Sucessful" });
